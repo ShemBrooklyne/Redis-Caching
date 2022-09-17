@@ -1,6 +1,6 @@
 package com.geekwys.rediscaching.controller;
 
-import com.geekwys.rediscaching.model.UserEntity;
+import com.geekwys.rediscaching.model.User;
 import com.geekwys.rediscaching.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +21,9 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
+
     @GetMapping("/users")
-    public List<UserEntity> fetchAllUsers() {
+    public List<User> fetchAllUsers() {
         log.info("Fetch all users in org: {}", userRepository.findAll());
         return userRepository.findAll();
     }
