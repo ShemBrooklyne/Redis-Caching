@@ -19,7 +19,7 @@ import javax.persistence.Id;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userID;
+    private Long userID;
 
     private String firstName;
     private String lastName;
