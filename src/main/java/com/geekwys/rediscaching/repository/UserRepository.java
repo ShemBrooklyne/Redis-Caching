@@ -11,6 +11,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     //custom query to search for user by first name or second name
-    List<UserEntity> findUserByFirstOrSecondName(String firstName, String secondName);
+    List<UserEntity> findUserByFirstOrSecondName(String firstName, String lastName);
 
 }
