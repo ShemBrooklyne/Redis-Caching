@@ -17,9 +17,9 @@ import javax.persistence.*;
 @RedisHash("organization.users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    @org.springframework.data.annotation.Id private Long userID;
+    @org.springframework.data.annotation.Id private Long userId;
 
     @Column(name = "first_name")
     private String firstName;
