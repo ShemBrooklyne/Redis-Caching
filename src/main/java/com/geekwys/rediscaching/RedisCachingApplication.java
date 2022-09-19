@@ -18,17 +18,11 @@ public class RedisCachingApplication {
         SpringApplication.run(RedisCachingApplication.class, args);
     }
 
-    //initiate new redis connection
-    @Bean
-    RedisConnectionFactory redisConnectionFactory() {
-        return new LettuceConnectionFactory();
-    }
-
     //initiating RedisTemplate for entity users
     @Bean
-    RedisTemplate<String, User> redisTemplate() {
+    RedisTemplate<String, User> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, User> userRedisTemplate = new RedisTemplate<>();
-        userRedisTemplate.setConnectionFactory(redisConnectionFactory());
+        userRedisTemplate.setConnectionFactory(redisConnectionFactory);
         return userRedisTemplate;
     }
 
